@@ -14,6 +14,21 @@ class Category extends Model {
       }
     }
   }
+
+  static get relationMappings() {
+    const Anime = require('./Anime.js')
+
+    return {
+      animes: {
+        relation: Model.HasManyRelation,
+        modelClass: Anime,
+        join: {
+          from: 'categories.id',
+          to: 'animes.categoryId'
+        }
+      }
+    }
+  }
 }
 
 module.exports = Category

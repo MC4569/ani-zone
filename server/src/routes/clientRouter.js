@@ -7,6 +7,7 @@ const router = new express.Router();
 const clientRoutes = [ 
   "/",
   "/categories",
+  "/animes/:id",
   "/user-sessions/new", 
   "/users/new",
 ];
