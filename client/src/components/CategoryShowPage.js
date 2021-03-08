@@ -30,10 +30,22 @@ const CategoryShowPage = props => {
     getCategory()
   }, [])
 
+  const animeTiles = category.animes.map((anime) => {
+    return (
+      <AnimeTile
+        key={anime.id}
+        anime={anime} 
+      />
+    )
+  })
+
   return (
     <div className='grid-container text-center' id='category-show'>
       <div className='showpage-content'>
         <h1>{category.name}</h1>
+        <div className='grid-x grid-margin-x small-up-2 medium-up-3'>
+          {animeTiles}
+        </div>
       </div>
     </div>
   )
