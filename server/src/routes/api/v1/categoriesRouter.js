@@ -1,6 +1,6 @@
 import express from 'express' 
 
-import { Category } from '../../../models/index'
+import { Category } from '../../../models/index.js'
 import CategorySerializer from '../../../serializers/CategorySerializer.js' 
 
 const categoriesRouter = new express.Router()

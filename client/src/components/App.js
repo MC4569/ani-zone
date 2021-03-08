@@ -10,6 +10,7 @@ import TopBar from "./layout/TopBar";
 import LandingPage from './LandingPage.js'
 import CategoryIndexPage from './CategoryIndexPage.js'
 import AnimeShowPage from './AnimeShowPage.js'
+import CategoryShowPage from './CategoryShowPage.js'
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -28,6 +29,7 @@ const App = (props) => {
       <Switch>
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/categories' component={CategoryIndexPage}/>
+        <Route exact path='/categories/:id' component={CategoryShowPage}/>
         <Route exact path='/animes/:id' component={AnimeShowPage}/>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
