@@ -18,7 +18,7 @@ class Anime extends Model {
   }
 
   static get relationMappings() {
-    const {Category} = require('./index.js')
+    const {Category, Review } = require('./index.js')
 
     return {
       category: {
@@ -27,6 +27,14 @@ class Anime extends Model {
         join: {
           from: 'animes.categoryId',
           to: 'categories.id'
+        }
+      },
+      reviews: {
+        relation: Model.HasManyRelation,
+        modelClass: Review,
+        join: {
+          from: 'animes.id',
+          to: 'reviews.animeId'
         }
       }
     }
